@@ -9,7 +9,7 @@ namespace firstTUT.Data.Services
 {
     public class PublisherServices : IPublishers
     {
-          private AppDbContext _context;
+        private AppDbContext _context;
         public PublisherServices (AppDbContext context)
         {
             _context = context;

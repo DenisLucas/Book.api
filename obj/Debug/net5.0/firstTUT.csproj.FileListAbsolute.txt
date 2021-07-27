@@ -59,3 +59,13 @@
 /home/denis/Downloads/webAPI/firstTUT/obj/Debug/net5.0/ref/firstTUT.dll
 /home/denis/Downloads/webAPI/firstTUT/obj/Debug/net5.0/firstTUT.pdb
 /home/denis/Downloads/webAPI/firstTUT/obj/Debug/net5.0/firstTUT.genruntimeconfig.cache
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/firstTUT.StaticWebAssets.xml
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.UI.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
+/home/denis/Downloads/webAPI/firstTUT/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

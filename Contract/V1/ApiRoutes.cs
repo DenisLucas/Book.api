@@ -32,5 +32,11 @@ namespace firstTUT.Contract.V1
             public const string AddPublisher = Base + "/Add-Publisher";
             public const string Get = Base + "/Get/{id}";           
         }
+        public static class User
+        {
+            public const string Login = Base + "/Identity/Login";
+            public const string Register = Base + "/Identity/Register";
+            
+        }
     }
 }
