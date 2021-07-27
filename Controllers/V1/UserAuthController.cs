@@ -29,6 +29,23 @@ namespace firstTUT.Controllers.V1
                 Token = authResponse.Token
             });
         }
+        [HttpPost(template: ApiRoutes.User.Login)]
+        public async Task<IActionResult> LoginUser([FromBody] VmUserAuth user)
+        {
+            var authResponse = await _userAuthServices.LoginUserAsync(user.Username,user.Email,user.Password);
+            if (!authResponse.Success)
+            {
+                return BadRequest(new VmRegistrationFailure()
+                {
+                    Errors = authResponse.Errors
+                });
+            }
+            return Ok( new VmRegistrationSuccess()
+            {
+                Token = authResponse.Token
+            });
+        }
+
 
     }
 }

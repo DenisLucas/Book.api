@@ -20,7 +20,31 @@ namespace firstTUT.Data.Services
             _jwtsettings = jwtSettings;
 
         }
-        
+
+        public async Task<AuthUserResponse> LoginUserAsync(string username, string email, string password)
+        {
+            var User = await _usermanager.FindByEmailAsync(email);
+
+            if (User == null){
+                return new AuthUserResponse
+                {
+                    Errors = new [] {"Login Error"}
+                };
+            };
+
+            var CheckPassword = await _usermanager.CheckPasswordAsync(User,password);
+            if (!CheckPassword) 
+            {
+                return new AuthUserResponse
+                {
+                    Errors = new [] {"Login Error"}
+                };
+            }
+            return AuthenticationResultForUser(User);
+            
+            
+        }
+
         public async Task<AuthUserResponse> RegisterUserAsync(string user, string email, string Password)
         {
             var UserExists = await _usermanager.FindByEmailAsync(email);
@@ -45,8 +69,14 @@ namespace firstTUT.Data.Services
                 return new AuthUserResponse
                 {
                     Errors = CreateUser.Errors.Select(x => x.Description)
-                };    
+                };  
             }
+            return AuthenticationResultForUser(newUser);
+              
+        }
+
+        private AuthUserResponse AuthenticationResultForUser(IdentityUser newUser)
+        {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtsettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -70,7 +100,6 @@ namespace firstTUT.Data.Services
                 Success = true,
                 Token = tokenHandler.WriteToken(token)
             };
-
-        }
+        }       
     }
 }
